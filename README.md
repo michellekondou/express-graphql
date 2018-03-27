@@ -3,12 +3,18 @@ An Express.js app, using a GraphQL REST wrapper (endpoints from http://jsonplace
 
 ## Protocol
 - http2 & http2 push server
+-- spdy
 ## Package management
 - webpack
 ## Task management
 - gulp 
+-- gulp-sass
 ## Data
-- GraphQL: apollo-graph
+- GraphQL: 
+-- apollo-graph
+-- graphqlExpress
+-- graphiqlExpress
+-- apollo-fetch
 ## Styles
 - Grid Layout
 
