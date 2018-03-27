@@ -11,9 +11,9 @@ An Express.js app, using a GraphQL REST wrapper (endpoints from http://jsonplace
 -- gulp-sass
 ## Data
 - GraphQL: 
--- apollo-graph
--- graphqlExpress
--- graphiqlExpress
+-- apollo-server-express 
+--- graphqlExpress
+--- graphiqlExpress
 -- apollo-fetch
 ## Styles
 - Grid Layout
