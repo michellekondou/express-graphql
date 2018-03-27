@@ -13,4 +13,5 @@ An Express.js app, using a GraphQL REST wrapper (endpoints from http://jsonplace
 - Grid Layout
 
 `npm install`
+
 `npm run start`
