@@ -15,3 +15,5 @@ An Express.js app, using a GraphQL REST wrapper (endpoints from http://jsonplace
 `npm install`
 
 `npm run start`
+
+Server running on https://localhost/3001
