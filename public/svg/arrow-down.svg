@@ -1,0 +1,15 @@
+
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="header" transform="translate(-171.000000, -192.000000)">
+            <g>
+                <g transform="translate(2.000000, 185.000000)">
+                    <g transform="translate(164.000000, 0.000000)">
+                        <rect id="Rectangle-path" x="0" y="0" width="20" height="20"></rect>
+                        <path d="M13.344,7.784 C13.612,7.519 14.045,7.519 14.313,7.784 C14.58,8.049 14.581,8.478 14.313,8.744 L10.444,12.535 C10.176,12.801 9.742,12.801 9.474,12.535 L5.605,8.744 C5.337,8.478 5.337,8.049 5.605,7.784 C5.873,7.519 6.306,7.519 6.574,7.784 L9.959,10.893 L13.344,7.784 L13.344,7.784 Z" id="Shape" fill="#000000" fill-rule="evenodd"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

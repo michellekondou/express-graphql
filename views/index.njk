@@ -1,0 +1,36 @@
+<!-- index.nunjucks -->
+{% extends "layout.njk" %}
+{% block content %}
+<main class="container">
+<h2 class="page-title">Users</h2>
+<link href="/static/users.css" rel="stylesheet">
+<figure>
+    <table>
+    <caption>List of authors</caption>
+        <thead>
+            <tr>
+                <th>Name <i class="icon arrow-down"></i></th>
+                <th>Posts <i class="icon arrow-down"></i></th>
+                <th>Comments/Post <i class="icon arrow-down"></i></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <th data-title="Name">
+                    <a href="/user/{{ user.id }}">
+                        <span class="first-name">{{ user.name.firstName }} </span>
+                        <span class="last-name">{{ user.name.lastName }}</span>
+                    </a>
+                </th>
+                <td data-title="Posts">{{ user.postCount }}</td>
+                <td data-title="Comments/Post">{{ user.commentCount }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</figure>
+</main>
+<script type="text/javascript" src="/static/polyfills.bundle.js"></script>
+<script type="text/javascript" src="/static/users.bundle.js"></script>
+{% endblock %}

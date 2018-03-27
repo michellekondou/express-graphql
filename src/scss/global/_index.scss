@@ -1,0 +1,101 @@
+
+
+html {
+    font-size: 16px;   
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a, 
+a:hover {
+    color: inherit;
+}
+
+body {
+    background-color: white;
+    color: $black;
+    margin: 0;
+    padding: 2em;    
+    font: 100%/1.3 $sans_serif, sans-serif;
+    font-stretch: normal;
+    max-width: 86em;
+}
+
+@media (max-width: 414px) {
+    body {
+        padding: 1.6em; 
+    }
+}
+
+figure {
+    margin: 0;
+}
+
+button[type="button"] {
+    cursor: pointer;
+    outline: none;
+    background-color: transparent;
+}
+
+.arrow-down:before {
+    transform: rotate(0deg);
+    transition: 200ms ease;
+}
+
+.rotated,
+i.rotated:before {
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transition: 300ms ease all;
+}
+
+h2, h3, h4, h5 {
+    font-family: $sans_serif, sans-serif;
+    margin: 0 0 .5em 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+//helpers
+.hide {
+    position: fixed; 
+    overflow: hidden;
+    clip-path: polygon(0px 0px,0px 0px,0px 0px,0px 0px);
+    opacity: 0; 
+}
+
+.show {  
+    position: relative;
+    clip-path: none;
+    opacity: 1;
+    transition: opacity .4s ease-in;    
+    margin-top: 1em;
+    font-size: 14px;
+    line-height: 1.5;
+    &.no-space {
+        position: absolute; 
+    }
+}
+
+//header
+.site-logo {
+    font-weight: bold;
+    font-size: 20px; 
+    text-transform: uppercase;
+    letter-spacing: 1px;   
+}
+
+.page-title {
+    margin-top: 30px;
+    letter-spacing: -1px;
+    font-size: 30px;
+}
+
+.breadcrumb {
+    display: block;
+    text-decoration: none;
+    font-size: 14px;
+    color: $gray;
+}

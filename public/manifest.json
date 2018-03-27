@@ -1,0 +1,8 @@
+{
+    "name": "Sample App",
+    "short_name": "Sample App",
+    "lang": "en-US",
+    "start_url": "/",
+    "display": "browser",
+    "theme_color": "#fff"
+}

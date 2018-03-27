@@ -1,0 +1,44 @@
+<!-- user.nunjucks -->
+{% extends "layout.njk" %}
+{% block content %}
+<link href="/static/user.css" rel="stylesheet">
+<a href="/" class="breadcrumb">&lt; Home</a>
+<main class="container">
+<section class="user-data">
+<h2 class="page-title">{{ user.username }}</h2>
+<div class="user-details">
+    <button type="button" class="reveal-content btn-user" data-target="user-details">User Details <i class="icon arrow-down"></i></button>
+    <article class="hide">
+        <h3>{{ user.name.firstName }} {{ user.name.lastName }}</h3>
+        <a href="">{{ user.email }}</a>
+        <span>{{ user.address.street }}</span><br>
+        <span>{{ user.address.suite }}</span>
+    </article>
+</div>
+</section>
+<section class="user-posts">
+{% for post in user.posts %}
+<div class="post">
+    <h3 class="post-title">{{ post.title }}</h3>  
+    <p>{{ post.body }}</p>
+    <div class="user-comments">
+        <button type="button" class="reveal-content btn-comments" data-target="user-comments">{{ post.comments | length }} comments <i class="icon icon-plus-circle"></i></button>
+        <div class="hide">
+        {% for comment in post.comments %}
+            <article class="comment">
+                <h4>{{ comment.name }}</h4>
+                <a href="#">{{ comment.email }}</a>
+                <p>{{ comment.body }}</p>
+            </article>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+{% endfor %}
+</section>
+</main>
+<script type="text/javascript" src="/static/polyfills.bundle.js"></script>
+<script type="text/javascript" src="/static/user.bundle.js"></script>
+{% endblock %}
+
+
