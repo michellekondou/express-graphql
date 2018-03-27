@@ -11,10 +11,10 @@ An Express.js app, using a GraphQL REST wrapper (endpoints from http://jsonplace
   - gulp-sass
 ## Data
 - GraphQL: 
-  -- apollo-server-express 
-    --- graphqlExpress
-    --- graphiqlExpress
-  -- apollo-fetch
+  - apollo-server-express 
+    - graphqlExpress
+    - graphiqlExpress
+  - apollo-fetch
 ## Styles
 - Grid Layout
 
