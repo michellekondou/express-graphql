@@ -26,6 +26,7 @@ An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonp
 # Browser Support
 - Last 2 versions (IE11 & IE10)
 
+## To use:
 
 `npm install`
 
