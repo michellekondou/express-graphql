@@ -5,15 +5,13 @@
     position: relative;
     margin-top: 2em;
     display: grid;  
-    grid-template-columns: 1fr 1fr 1fr;
-    .page-title {
-        font-size: 62px;
-    }  
+    grid-template-columns: repeat(3, 1fr);  
 }
 
 .user-data h2 {
     margin: 0;
     align-self: center; 
+    font-size: 62px;
 }
 
 .user-details {
@@ -34,22 +32,28 @@
 
 @media (max-width: 1200px) {
     .user-data {
-        grid-template-columns: 1fr 1fr 1fr 1fr;  
+        grid-template-columns:  repeat(3, 1fr);
     }
+
     .user-details {
         grid-column: 3;
+        justify-self: start;
+        position: relative;
     }
-}
 
-@media (max-width: 960px) {
-    .user-details {
-        grid-column: 4;
+    .show.no-space {
+        right: 0;
+        text-align: right;
     }
+
 }
 
 @media (max-width: 768px) {
     .user-data {
         grid-template-columns: 1fr;  
+        h2 {
+            font-size: 46px;
+        }  
     }
 }
 
@@ -63,6 +67,8 @@
 
     .show.no-space {
         position: relative;
+        text-align: left;
+        left: auto; 
     }
 
     .user-details {
@@ -71,6 +77,14 @@
         width: auto;
     }
     
+}
+
+@media (max-width: 414px) {
+    .user-data { 
+        h2 {
+            font-size: 38px;
+        }  
+    }
 }
 
 .btn-user {
@@ -86,14 +100,14 @@
 }
 
 .user-posts {
-    margin-top: 5em;
+    margin-top: 6em;
     display: grid;  
     grid-template-columns: 1fr 1fr 1fr 1fr;
     max-width: 100%  
 }
 
 .post {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
     grid-column: 1/3; 
     p {
         font-size: 18px;
@@ -158,13 +172,13 @@
 
 @media (max-width: 960px) {
     .user-posts {
-        grid-template-columns: 1fr 1fr 1fr;  
+        grid-template-columns: repeat(3, 1fr);  
     }
 }
 
 @media (max-width: 768px) {
     .user-posts {
-        grid-template-columns: 1fr 1fr 1fr 1fr; 
+        grid-template-columns: repeat(4, 1fr);
     } 
     .post {
         margin-bottom: 3em;
@@ -185,9 +199,12 @@
 
 @media (max-width: 414px) {
     .user-comments {
-      .comment p {
-          font-size: 14px;
-      }  
+        .show {
+            margin-left: 1em;
+        }
+        .comment p {
+            font-size: 14px;
+        }  
     }
 }
 
