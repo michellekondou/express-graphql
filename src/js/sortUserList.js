@@ -17,7 +17,7 @@ const sortList = (element) => {
         const tbody = table.getElementsByTagName('tbody')[0];
         const arrow = th.getElementsByTagName('i');
         arrow[0].classList.toggle('rotated');
-        Array.from(tbody.querySelectorAll('tr:not(caption)')) //added :not(caption) for Safari only
+        Array.from(tbody.querySelectorAll('tr')) //added :not(caption) for Safari only
             .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
             .forEach(tr => tbody.appendChild(tr));
     })));
