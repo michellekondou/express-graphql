@@ -17,7 +17,7 @@ const sortList = (element) => {
         const tbody = table.getElementsByTagName('tbody')[0];
         const arrow = th.getElementsByTagName('i');
         arrow[0].classList.toggle('rotated');
-        Array.from(table.querySelectorAll('tbody tr:nth-child(n+1)'))
+        Array.from(tbody.querySelectorAll('tr'))
             .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
             .forEach(tr => tbody.appendChild(tr));
     })));
