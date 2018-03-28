@@ -1,5 +1,4 @@
 import { hasClass } from '../helpers.js'
-//const hasClass = (element, cls) => { (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1 }
 
 const toggleContent = (element) => {
     element.forEach(el => el.addEventListener('click', (() => {
