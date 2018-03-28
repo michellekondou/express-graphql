@@ -15,7 +15,10 @@ An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonp
     - graphqlExpress
     - graphiqlExpress
   - apollo-fetch
-## Styles
+## JavaScript
+- es6
+- no frameworks
+## CSS
 - Grid Layout
 ## Performance Checkpoints
 - http2 & http2 push server for render-blocking stylesheets
@@ -23,7 +26,10 @@ An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonp
 - module pattern
 - text compression
 - minify CSS and JS
+## Browser Support
+- Last 2 versions (IE11 & IE10)
 
+## To use:
 
 `npm install`
 
