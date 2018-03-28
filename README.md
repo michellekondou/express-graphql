@@ -2,7 +2,7 @@
 An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonplaceholder.typicode.com/) to retrieve users, posts and comments.
 
 ## Protocol
-- http2
+- HTTPS, HTTP/2
   - spdy
 ## Package management
 - webpack
@@ -23,7 +23,8 @@ An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonp
 ## CSS
 - Grid Layout
 ## Performance Checkpoints
-- http2 & http2 push server for render-blocking stylesheets
+- HTTPS, HTTP/2 
+- HTTP/2 server push for render-blocking stylesheets
 - font preloading
 - module pattern
 - text compression
