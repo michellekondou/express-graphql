@@ -14,6 +14,7 @@ table {
         padding: 0.8em;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
+        will-change: transform; /*Safari bug*/
     }
 }
 
