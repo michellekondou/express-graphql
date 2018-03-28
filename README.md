@@ -1,5 +1,5 @@
 # Sample App
-An Express.js app, using a GraphQL REST wrapper (endpoints from http://jsonplaceholder.typicode.com/). Webpack for package management and Gulp for specific tasks.
+An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonplaceholder.typicode.com/) to retrieve users, posts and comments.
 
 ## Protocol
 - http2
