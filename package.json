@@ -22,10 +22,8 @@
     "core-js": "^2.5.3",
     "express": "^4.16.2",
     "express-async-handler": "^1.1.1",
-    "express-inline-css": "^1.3.0",
     "extract-loader": "^2.0.1",
     "graphql": "^0.13.1",
-    "graphql-aggregate": "^0.2.0",
     "graphql-tools": "^2.21.0",
     "gulp": "^3.9.1",
     "lodash": "^4.17.5",
@@ -48,9 +46,7 @@
     "babel-preset-es2015-ie": "^6.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "clean-webpack-plugin": "^0.1.18",
-    "critical": "^1.2.0",
     "css-loader": "^0.28.10",
-    "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.10",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
@@ -63,8 +59,6 @@
     "gulp-svg-sprites": "^4.1.2",
     "gulp-svg2png": "^2.0.2",
     "gulp-wait": "0.0.2",
-    "html-critical-webpack-plugin": "^1.1.0",
-    "html-webpack-plugin": "^2.30.1",
     "node-sass": "^4.7.2",
     "run-sequence": "^2.2.1",
     "sass-loader": "^6.0.7",
@@ -77,6 +71,6 @@
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.6.0"
   },
-  "author": "",
+  "author": "michellekondou@gmail.com",
   "license": "ISC"
 }
