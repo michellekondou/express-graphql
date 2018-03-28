@@ -21,7 +21,7 @@ require("source-map-support").install();
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aec758a173718b46887d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "aef33ffdc3c4491af5d9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -1207,12 +1207,11 @@ app.get('/user/:id/', asyncHandler(function () {
           case 2:
             userById = _context2.sent;
 
-            console.log(userById);
             res.render('user', {
               user: userById.user
             });
 
-          case 5:
+          case 4:
           case 'end':
             return _context2.stop();
         }

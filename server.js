@@ -106,7 +106,6 @@ app.get('/', asyncHandler(async (req, res, next) => {
 
 app.get('/user/:id/', asyncHandler(async (req, res, next) => {
   const userById = await getUserById(req.params.id)
-  console.log(userById);
   res.render('user', {
     user: userById.user
   })
