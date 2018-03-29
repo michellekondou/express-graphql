@@ -5,7 +5,6 @@ td, th {
     padding: 0.8em 1.2em 0.8em 0.8em;
 }
 
-// border-bottom: 1px solid #ccc;
 table {
     font-size: 16px;
     border-collapse: collapse;
@@ -14,7 +13,7 @@ table {
         padding: 0.8em;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
-        will-change: transform; /*Safari bug*/
+        will-change: transform; /*Safari bug: caption jumps when sorting table*/
     }
 }
 
@@ -104,7 +103,7 @@ tr:nth-child(odd) td {
     }
 }
 
-.arrow-down:before {
+thead .arrow-down:before {
     margin-top: -3px;
     margin-left: 0.4em;
 }

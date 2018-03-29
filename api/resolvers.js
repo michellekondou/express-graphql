@@ -1,4 +1,4 @@
-import { users, user, userPosts, postComments, countPostsPerUser, countCommentsPerUser } from './restRouter'
+import { users, user, userPosts, postComments, countPostsPerUser, countCommentsPerUser } from './controllers'
 
 const resolvers = {
     Query: {

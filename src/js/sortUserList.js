@@ -7,9 +7,9 @@ const getCellValue = (tr, idx) => {
     }
 }
 
-const comparer = (idx, desc) => (a, b) => ((v1, v2) =>
+const comparer = (idx, asc) => (a, b) => ((v1, v2) =>
     v1 !== '' && v2 !== '' && !isNaN(v1) && !isNaN(v2) ? v2 - v1 : v2.toString().localeCompare(v1)
-)(getCellValue(desc ? a : b, idx), getCellValue(desc ? b : a, idx));
+)(getCellValue(asc ? a : b, idx), getCellValue(asc ? b : a, idx));
 
 const sortList = (element) => {
     element.forEach(th => th.addEventListener('click', (() => {
@@ -17,7 +17,7 @@ const sortList = (element) => {
         const tbody = table.getElementsByTagName('tbody')[0];
         const arrow = th.getElementsByTagName('i');
         arrow[0].classList.toggle('rotated');
-        Array.from(tbody.querySelectorAll('tr')) //added :not(caption) for Safari only
+        Array.from(tbody.querySelectorAll('tr'))
             .sort(comparer(Array.from(th.parentNode.children).indexOf(th), this.asc = !this.asc))
             .forEach(tr => tbody.appendChild(tr));
     })));

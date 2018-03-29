@@ -21,7 +21,7 @@ require("source-map-support").install();
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "aef33ffdc3c4491af5d9"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "008fe7e8d0bb3fe73425"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -687,70 +687,7 @@ require("source-map-support").install();
 /************************************************************************/
 /******/ ({
 
-/***/ "./api/graphqlRouter.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getUserData; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getUserById; });
-var _require = __webpack_require__("apollo-fetch"),
-    createApolloFetch = _require.createApolloFetch;
-
-var _require2 = __webpack_require__("lodash"),
-    sortBy = _require2.sortBy,
-    zipObject = _require2.zipObject;
-
-var apolloFetch = createApolloFetch({ uri: 'http://localhost:3000/graphql' });
-
-//get data for templates
-var getUserData = function getUserData() {
-  var query = '\n    query users\n    {\n      users {\n        id\n        name {\n          firstName\n          lastName\n        }\n        postCount\n        commentCount\n      }\n\n    }\n  ';
-  var result = apolloFetch({ query: query }).then(function (res) {
-    return res.data;
-  });
-  return result;
-};
-
-var getUserById = function getUserById(userId) {
-  var query = '\n    query users($userId: ID!)\n      {\n        user(id: $userId) {\n          id\n          name {\n            firstName\n            lastName\n          }\n          email\n          username\n          address {  \n            street\n            suite\n          }\n          posts {\n            title\n            body\n            comments {\n              name\n              email\n              body\n            }\n          }\n        }\n      }\n  ';
-  var variables = { userId: userId };
-  var result = apolloFetch({ query: query, variables: variables }).then(function (res) {
-    return res.data;
-  });
-  return result;
-};
-
-
-
-/***/ }),
-
-/***/ "./api/resolvers.js":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__restRouter__ = __webpack_require__("./api/restRouter.js");
-
-
-var resolvers = {
-    Query: {
-        users: __WEBPACK_IMPORTED_MODULE_0__restRouter__["f" /* users */],
-        user: __WEBPACK_IMPORTED_MODULE_0__restRouter__["d" /* user */]
-    },
-    User: {
-        posts: __WEBPACK_IMPORTED_MODULE_0__restRouter__["e" /* userPosts */],
-        postCount: __WEBPACK_IMPORTED_MODULE_0__restRouter__["b" /* countPostsPerUser */],
-        commentCount: __WEBPACK_IMPORTED_MODULE_0__restRouter__["a" /* countCommentsPerUser */]
-    },
-    Post: {
-        comments: __WEBPACK_IMPORTED_MODULE_0__restRouter__["c" /* postComments */]
-    }
-};
-
-/* harmony default export */ __webpack_exports__["a"] = (resolvers);
-
-/***/ }),
-
-/***/ "./api/restRouter.js":
+/***/ "./api/controllers.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -802,12 +739,16 @@ var user = function user(users, _ref) {
 
 var userPosts = function userPosts(_ref2) {
     var id = _ref2.id;
-    return fetch(endpoint + '/users/' + id + '/posts').then(toJSON);
+    return fetch(endpoint + '/users/' + id + '/posts').then(toJSON).catch(function (error) {
+        return next(error);
+    });
 };
 
 var postComments = function postComments(_ref3) {
     var id = _ref3.id;
-    return fetch(endpoint + '/posts/' + id + '/comments').then(toJSON);
+    return fetch(endpoint + '/posts/' + id + '/comments').then(toJSON).catch(function (error) {
+        return next(error);
+    });
 };
 
 var countPostsPerUser = function countPostsPerUser(args) {
@@ -837,6 +778,69 @@ var countCommentsPerUser = function countCommentsPerUser(args) {
 };
 
 
+
+/***/ }),
+
+/***/ "./api/graphqlRouter.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return getUserData; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return getUserById; });
+var _require = __webpack_require__("apollo-fetch"),
+    createApolloFetch = _require.createApolloFetch;
+
+var _require2 = __webpack_require__("lodash"),
+    sortBy = _require2.sortBy,
+    zipObject = _require2.zipObject;
+
+var apolloFetch = createApolloFetch({ uri: 'http://localhost:3000/graphql' });
+
+//get data for templates
+var getUserData = function getUserData() {
+  var query = '\n    query users\n    {\n      users {\n        id\n        name {\n          firstName\n          lastName\n        }\n        postCount\n        commentCount\n      }\n\n    }\n  ';
+  var result = apolloFetch({ query: query }).then(function (res) {
+    return res.data;
+  });
+  return result;
+};
+
+var getUserById = function getUserById(userId) {
+  var query = '\n    query users($userId: ID!)\n      {\n        user(id: $userId) {\n          id\n          name {\n            firstName\n            lastName\n          }\n          email\n          username\n          address {  \n            street\n            suite\n          }\n          posts {\n            title\n            body\n            comments {\n              name\n              email\n              body\n            }\n          }\n        }\n      }\n  ';
+  var variables = { userId: userId };
+  var result = apolloFetch({ query: query, variables: variables }).then(function (res) {
+    return res.data;
+  });
+  return result;
+};
+
+
+
+/***/ }),
+
+/***/ "./api/resolvers.js":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__controllers__ = __webpack_require__("./api/controllers.js");
+
+
+var resolvers = {
+    Query: {
+        users: __WEBPACK_IMPORTED_MODULE_0__controllers__["f" /* users */],
+        user: __WEBPACK_IMPORTED_MODULE_0__controllers__["d" /* user */]
+    },
+    User: {
+        posts: __WEBPACK_IMPORTED_MODULE_0__controllers__["e" /* userPosts */],
+        postCount: __WEBPACK_IMPORTED_MODULE_0__controllers__["b" /* countPostsPerUser */],
+        commentCount: __WEBPACK_IMPORTED_MODULE_0__controllers__["a" /* countCommentsPerUser */]
+    },
+    Post: {
+        comments: __WEBPACK_IMPORTED_MODULE_0__controllers__["c" /* postComments */]
+    }
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (resolvers);
 
 /***/ }),
 
