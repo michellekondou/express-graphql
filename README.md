@@ -38,7 +38,7 @@ An Express.js app, using a GraphQL REST API wrapper (endpoints from http://jsonp
 
 `npm run start`
 
-Server running on https://localhost/3001
+Server running on https://localhost:3001
 
 ## TODO:
 
