@@ -65,34 +65,34 @@ app.use('/graphql', bodyParser.json(), graphqlExpress({
 app.use('/graphiql', graphiqlExpress({ endpointURL: '/graphql' }))
 
 //http2 - push styles //TODO figure out why res.push needs to go here, after graphql stuff
-const filesToPush = [
-  'public/global.css',
-  'public/users.css',
-  'public/user.css'
-];
+// const filesToPush = [
+//   'public/global.css',
+//   'public/users.css',
+//   'public/user.css'
+// ];
 
-filesToPush.forEach(element => {
-  const f = fs.readFileSync(element)
-  const fName = split(element, '/')
-  const pushFiles = function (req, res, next) {
-    var stream = res.push(`/static/${fName[1]}`, {
-      status: 200, // optional
-      method: 'GET', // optional
-      request: {
-        accept: '*/*'
-      },
-      response: {
-        'content-type': 'text/css'
-      }
-    })
-    stream.on('error', function (e) {
-      console.log(e);
-    })
-    stream.end(f)
-    next()
-  }
-  app.use(pushFiles)
-})
+// filesToPush.forEach(element => {
+//   const f = fs.readFileSync(element)
+//   const fName = split(element, '/')
+//   const pushFiles = function (req, res, next) {
+//     var stream = res.push(`/static/${fName[1]}`, {
+//       status: 200, // optional
+//       method: 'GET', // optional
+//       request: {
+//         accept: '*/*'
+//       },
+//       response: {
+//         'content-type': 'text/css'
+//       }
+//     })
+//     stream.on('error', function (e) {
+//       console.log(e);
+//     })
+//     stream.end(f)
+//     next()
+//   }
+//   app.use(pushFiles)
+// })
 
 //routes
 import { getUserData, getUserById } from './api/graphqlRouter'
